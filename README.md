@@ -1,6 +1,4 @@
-Aqui está um exemplo de `README.md` para o seu projeto, que pode ser colocado no GitHub. Ele descreve o propósito do projeto, como configurá-lo, como executá-lo e outras informações relevantes.
 
----
 
 # 🎰 Projeto Loteria - Resultados e Notificações
 
