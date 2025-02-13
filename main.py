@@ -151,7 +151,7 @@ while True:
                 }
 
                 salvar_pdf_horario(dados_pdf)
-                salvar_no_banco(dados_pdf)  # Salva os dados no banco
+                salvar_no_banco(dados_pdf) 
                 consultar_banco()  
                 ultimo_envio_pdf = time.time()
 
