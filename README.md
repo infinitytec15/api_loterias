@@ -1,189 +1,135 @@
-<img src="docs/source/mypy_light.svg" alt="mypy logo" width="300px"/>
+Aqui está um exemplo de `README.md` para o seu projeto, que pode ser colocado no GitHub. Ele descreve o propósito do projeto, como configurá-lo, como executá-lo e outras informações relevantes.
 
-Mypy: Static Typing for Python
-=======================================
+---
 
-[![Stable Version](https://img.shields.io/pypi/v/mypy?color=blue)](https://pypi.org/project/mypy/)
-[![Downloads](https://img.shields.io/pypi/dm/mypy)](https://pypistats.org/packages/mypy)
-[![Build Status](https://github.com/python/mypy/actions/workflows/test.yml/badge.svg)](https://github.com/python/mypy/actions)
-[![Documentation Status](https://readthedocs.org/projects/mypy/badge/?version=latest)](https://mypy.readthedocs.io/en/latest/?badge=latest)
-[![Chat at https://gitter.im/python/typing](https://badges.gitter.im/python/typing.svg)](https://gitter.im/python/typing?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Checked with mypy](https://www.mypy-lang.org/static/mypy_badge.svg)](https://mypy-lang.org/)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![Linting: Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/charliermarsh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
+# 🎰 Projeto Loteria - Resultados e Notificações
 
-Got a question?
----------------
+Este projeto tem como objetivo consultar os resultados de loterias da Caixa Econômica Federal, salvar os dados em um banco de dados SQLite, gerar PDFs com os resultados e enviar notificações via Discord.
 
-We are always happy to answer questions! Here are some good places to ask them:
+---
 
-- for general questions about Python typing, try [typing discussions](https://github.com/python/typing/discussions)
-- for anything you're curious about, try [gitter chat](https://gitter.im/python/typing)
+## 🚀 Funcionalidades
 
-If you're just getting started,
-[the documentation](https://mypy.readthedocs.io/en/stable/index.html)
-and [type hints cheat sheet](https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html)
-can also help answer questions.
+- **Consulta de resultados**: Obtém os resultados de loterias em tempo real através da API da Caixa.
+- **Banco de dados**: Salva os resultados em um banco de dados SQLite para consultas futuras.
+- **Geração de PDFs**: Cria um PDF com os resultados da loteria.
+- **Notificações no Discord**: Envia os resultados para um canal do Discord usando webhooks, tanto em formato de embed quanto em PDF.
 
-If you think you've found a bug:
+---
 
-- check our [common issues page](https://mypy.readthedocs.io/en/stable/common_issues.html)
-- search our [issue tracker](https://github.com/python/mypy/issues) to see if
-  it's already been reported
+## 📋 Pré-requisitos
 
-To report a bug or request an enhancement:
+Antes de começar, você precisará ter instalado:
 
-- report at [our issue tracker](https://github.com/python/mypy/issues)
-- if the issue is with a specific library or function, consider reporting it at
-  [typeshed tracker](https://github.com/python/typeshed/issues) or the issue
-  tracker for that library
+- Python 3.8 ou superior
+- Git (opcional, para clonar o repositório)
 
-To discuss a new type system feature:
+---
 
-- discuss at [discuss.python.org](https://discuss.python.org/c/typing/32)
-- there is also some historical discussion at the [typing-sig mailing list](https://mail.python.org/archives/list/typing-sig@python.org/) and the [python/typing repo](https://github.com/python/typing/issues)
+## 🛠️ Configuração
 
-What is mypy?
--------------
-
-Mypy is a static type checker for Python.
-
-Type checkers help ensure that you're using variables and functions in your code
-correctly. With mypy, add type hints ([PEP 484](https://www.python.org/dev/peps/pep-0484/))
-to your Python programs, and mypy will warn you when you use those types
-incorrectly.
-
-Python is a dynamic language, so usually you'll only see errors in your code
-when you attempt to run it. Mypy is a *static* checker, so it finds bugs
-in your programs without even running them!
-
-Here is a small example to whet your appetite:
-
-```python
-number = input("What is your favourite number?")
-print("It is", number + 1)  # error: Unsupported operand types for + ("str" and "int")
-```
-
-Adding type hints for mypy does not interfere with the way your program would
-otherwise run. Think of type hints as similar to comments! You can always use
-the Python interpreter to run your code, even if mypy reports errors.
-
-Mypy is designed with gradual typing in mind. This means you can add type
-hints to your code base slowly and that you can always fall back to dynamic
-typing when static typing is not convenient.
-
-Mypy has a powerful and easy-to-use type system, supporting features such as
-type inference, generics, callable types, tuple types, union types,
-structural subtyping and more. Using mypy will make your programs easier to
-understand, debug, and maintain.
-
-See [the documentation](https://mypy.readthedocs.io/en/stable/index.html) for
-more examples and information.
-
-In particular, see:
-
-- [type hints cheat sheet](https://mypy.readthedocs.io/en/stable/cheat_sheet_py3.html)
-- [getting started](https://mypy.readthedocs.io/en/stable/getting_started.html)
-- [list of error codes](https://mypy.readthedocs.io/en/stable/error_code_list.html)
-
-Quick start
------------
-
-Mypy can be installed using pip:
+### 1. Clone o repositório
 
 ```bash
-python3 -m pip install -U mypy
+git clone https://github.com/seu-usuario/seu-repositorio.git
+cd seu-repositorio
 ```
 
-If you want to run the latest version of the code, you can install from the
-repo directly:
+### 2. Crie um ambiente virtual (opcional, mas recomendado)
 
 ```bash
-python3 -m pip install -U git+https://github.com/python/mypy.git
+python -m venv venv
+source venv/bin/activate  # No Windows: venv\Scripts\activate
 ```
 
-Now you can type-check the [statically typed parts] of a program like this:
+### 3. Instale as dependências
 
 ```bash
-mypy PROGRAM
+pip install -r requirements.txt
 ```
 
-You can always use the Python interpreter to run your statically typed
-programs, even if mypy reports type errors:
+### 4. Configure as variáveis de ambiente
+
+Crie um arquivo `.env` na raiz do projeto e adicione as seguintes variáveis:
+
+```plaintext
+DISCORD_WEBHOOK_URL_PDF=URL_DO_WEBHOOK_PARA_PDFS
+DISCORD_WEBHOOK_URL_EMBED=URL_DO_WEBHOOK_PARA_EMBEDS
+```
+
+Substitua `URL_DO_WEBHOOK_PARA_PDFS` e `URL_DO_WEBHOOK_PARA_EMBEDS` pelos URLs reais dos webhooks do Discord.
+
+### 5. Execute o projeto
 
 ```bash
-python3 PROGRAM
+python main.py
 ```
 
-If you are working with large code bases, you can run mypy in
-[daemon mode], that will give much faster (often sub-second) incremental updates:
+---
 
-```bash
-dmypy run -- PROGRAM
+## 🗂️ Estrutura do Projeto
+
+```
+.
+├── main.py                  # Script principal
+├── requirements.txt         # Dependências do projeto
+├── .env                     # Variáveis de ambiente
+├── .gitignore               # Arquivos ignorados pelo Git
+├── README.md                # Documentação do projeto
+├── bancoloteria.sqlite3     # Banco de dados SQLite
+└── resultado_loteria.pdf    # Exemplo de PDF gerado
 ```
 
-You can also try mypy in an [online playground](https://mypy-play.net/) (developed by
-Yusuke Miyazaki).
+---
 
-[statically typed parts]: https://mypy.readthedocs.io/en/latest/getting_started.html#function-signatures-and-dynamic-vs-static-typing
-[daemon mode]: https://mypy.readthedocs.io/en/stable/mypy_daemon.html
+## 🛑 Como Parar o Script
 
-Integrations
-------------
+O script é executado em um loop infinito. Para interrompê-lo, pressione `Ctrl + C` no terminal.
 
-Mypy can be integrated into popular IDEs:
+---
 
-- VS Code: provides [basic integration](https://code.visualstudio.com/docs/python/linting#_mypy) with mypy.
-- Vim:
-  - Using [Syntastic](https://github.com/vim-syntastic/syntastic): in `~/.vimrc` add
-    `let g:syntastic_python_checkers=['mypy']`
-  - Using [ALE](https://github.com/dense-analysis/ale): should be enabled by default when `mypy` is installed,
-    or can be explicitly enabled by adding `let b:ale_linters = ['mypy']` in `~/vim/ftplugin/python.vim`
-- Emacs: using [Flycheck](https://github.com/flycheck/)
-- Sublime Text: [SublimeLinter-contrib-mypy](https://github.com/fredcallaway/SublimeLinter-contrib-mypy)
-- PyCharm: [mypy plugin](https://github.com/dropbox/mypy-PyCharm-plugin)
-- pre-commit: use [pre-commit mirrors-mypy](https://github.com/pre-commit/mirrors-mypy), although
-  note by default this will limit mypy's ability to analyse your third party dependencies.
+## 📄 Licença
 
-Web site and documentation
---------------------------
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-Additional information is available at the web site:
+---
 
-  <https://www.mypy-lang.org/>
+## 🤝 Contribuição
 
-Jump straight to the documentation:
+Contribuições são bem-vindas! Siga os passos abaixo:
 
-  <https://mypy.readthedocs.io/>
+1. Faça um fork do projeto.
+2. Crie uma branch para sua feature (`git checkout -b feature/nova-feature`).
+3. Commit suas alterações (`git commit -m 'Adicionando nova feature'`).
+4. Faça um push para a branch (`git push origin feature/nova-feature`).
+5. Abra um Pull Request.
 
-Follow along our changelog at:
+---
 
-  <https://mypy-lang.blogspot.com/>
+## 📧 Contato
 
-Contributing
-------------
+Se tiver dúvidas ou sugestões, entre em contato:
 
-Help in testing, development, documentation and other tasks is
-highly appreciated and useful to the project. There are tasks for
-contributors of all experience levels.
+- **Nome**: Gilberto Jr
+- **E-mail**: gilberto@infinitytec.info
 
-To get started with developing mypy, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
-Mypyc and compiled version of mypy
-----------------------------------
+---
 
-[Mypyc](https://github.com/mypyc/mypyc) uses Python type hints to compile Python
-modules to faster C extensions. Mypy is itself compiled using mypyc: this makes
-mypy approximately 4 times faster than if interpreted!
+Feito com ❤️ por Gilberto JR 👋
 
-To install an interpreted mypy instead, use:
+---
 
-```bash
-python3 -m pip install --no-binary mypy -U mypy
-```
+### Explicação das Seções:
 
-To use a compiled version of a development
-version of mypy, directly install a binary from
-<https://github.com/mypyc/mypy_mypyc-wheels/releases/latest>.
+1. **Título e Descrição**: Apresenta o projeto de forma clara e direta.
+2. **Funcionalidades**: Lista as principais funcionalidades do projeto.
+3. **Pré-requisitos**: Informa o que é necessário para rodar o projeto.
+4. **Configuração**: Passo a passo para configurar e executar o projeto.
+5. **Estrutura do Projeto**: Mostra a organização dos arquivos.
+6. **Como Parar o Script**: Instruções para interromper a execução.
+7. **Licença**: Informa sobre a licença do projeto.
+8. **Contribuição**: Explica como contribuir para o projeto.
+9. **Contato**: Fornece informações para contato.
 
-To contribute to the mypyc project, check out the issue tracker at <https://github.com/mypyc/mypyc>
+Agora é só salvar o conteúdo acima em um arquivo chamado `README.md` na raiz do seu projeto e subir para o GitHub! 😊
