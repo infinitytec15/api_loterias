@@ -130,4 +130,4 @@ Feito com ❤️ por Gilberto JR 👋
 8. **Contribuição**: Explica como contribuir para o projeto.
 9. **Contato**: Fornece informações para contato.
 
-Agora é só salvar o conteúdo acima em um arquivo chamado `README.md` na raiz do seu projeto e subir para o GitHub! 😊
+
