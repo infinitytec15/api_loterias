@@ -118,16 +118,5 @@ Feito com ❤️ por Gilberto JR 👋
 
 ---
 
-### Explicação das Seções:
-
-1. **Título e Descrição**: Apresenta o projeto de forma clara e direta.
-2. **Funcionalidades**: Lista as principais funcionalidades do projeto.
-3. **Pré-requisitos**: Informa o que é necessário para rodar o projeto.
-4. **Configuração**: Passo a passo para configurar e executar o projeto.
-5. **Estrutura do Projeto**: Mostra a organização dos arquivos.
-6. **Como Parar o Script**: Instruções para interromper a execução.
-7. **Licença**: Informa sobre a licença do projeto.
-8. **Contribuição**: Explica como contribuir para o projeto.
-9. **Contato**: Fornece informações para contato.
 
 
